@@ -4,6 +4,18 @@
  */
 package code;
 
+/**
+ * Minion card fields:
+ * cardName
+ * manaCost
+ * attack
+ * health
+ * heroClass
+ * race
+ * keyword
+ * rarity
+ * summoningSickness
+ */
 public abstract class Cards {
 	public String cardName;
 	public int manaCost;
