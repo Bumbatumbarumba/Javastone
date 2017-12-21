@@ -8,7 +8,6 @@ package code;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -23,6 +22,10 @@ public class Deck {
 	public static void sortDeck(){
 		//sorts the deck first by mana cost, then alphabetically
 		Collections.sort(deck, new CardComparator());
+		
+		//figure this out eventually lol
+		//look at 2xb3 lab 2
+		
 	}//end of sortDeck
 	
 	//used to shuffle the deck when the game starts 
