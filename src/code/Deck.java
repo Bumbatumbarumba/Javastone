@@ -8,6 +8,9 @@ package code;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Deck {
 	static List<Cards> deck = new ArrayList<Cards>();
@@ -19,8 +22,10 @@ public class Deck {
 	
 	public static void sortDeck(){
 		//sorts the deck first by mana cost, then alphabetically
+		Collections.sort(deck, new CardComparator());
 	}//end of sortDeck
 	
+	//used to shuffle the deck when the game starts 
 	public static void shuffleDeck(){
 		int deckSize = deck.size();
 		Random rand = new Random();
@@ -36,4 +41,15 @@ public class Deck {
 		deck.set(i, deck.get(change));
 		deck.set(change, helper);
 	}//end of swap
-}
+}//end of Deck class
+
+//used to compare two objects based on mana cost
+class CardComparator implements Comparator<Cards>{
+	@Override
+	public int compare(Cards card1, Cards card2) {
+		if (card1.getManaCost() <= card2.getManaCost())
+			return 0;
+		else
+			return 1;
+	}//end of compare
+}//end of CardComparator
