@@ -83,9 +83,34 @@ public abstract class Cards {
 		return !summoningSickness;
 	}
 	
-	public void drawCard(){
-		//put code here to draw cards
-	}
+	
+	/* by creating these generic actions, even though a minion may not possess the
+	 * ability, we can make our life easier, since we can play a minion and call every
+	 * one of these functions, instead of checking whether the minion has an effect
+	 */
+	public void battlecry(){
+		/* generic battlecry is to do nothing when the creature is summoned,
+		 * so when we call someMinion.battlecry() upon it being played, nothing
+		 * will happen; otherwise we can override this method whenever a
+		 * battlecry needs to occur
+		 */
+		//pass
+	}//end of battlecry
+	
+	public void deathrattle(){
+		/* generic deathrattle is to do nothing when the creature dies,
+		 * so when we call someMinion.deathrattle() upon it dying, nothing
+		 * will happen; otherwise we can override this method whenever a
+		 * deathrattle needs to occur
+		 */
+		//pass
+	}//end of deathrattle
+	
+	//the aura effect means that the minion affects other things when in play,
+	//eg direwolf alpha giving adjacent minions +1 attack
+	public void aura(){
+		//pass
+	}//end of aura
 }//end of Card class
 
 
