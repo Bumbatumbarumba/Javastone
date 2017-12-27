@@ -66,7 +66,7 @@ class NoviceEngineer extends Cards{
 	//draws a card to the player's hand
 	public void battlecry(){
 		GameBoard.addCardToHand1(Deck.drawCard());
-	}
+	}//end of battlecry
 }//end of StonetuskBoar class
 
 //O
