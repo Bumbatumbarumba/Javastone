@@ -13,22 +13,67 @@ import java.awt.event.ActionListener;
 //draws whatever stuff needs to be drawn
 public class DrawGameStuff extends JFrame{
 	public static void main (String [] args){
-		BoardGUI.createBoard();
+		MainMenu.createMainMenu();
 	}//end of main method
 }//end of DrawGameStuff
 
 //draws the game board
-class BoardGUI extends JFrame{
-	private static BoardGUI bgui = new BoardGUI();
+class MainMenu extends JFrame{
+	private static MainMenu startScreen = new MainMenu();
 	private static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	
-	public static void createBoard(){
-		bgui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		bgui.setSize(dim.width, dim.height);
-		bgui.setVisible(true);
-		bgui.setTitle("Board");
-	}//end of createBoard
-}//end of BoardGUI class
+	private static JButton exitButton = new JButton("Exit Game");
+	private static JButton deckBuildScreen = new JButton("Build Decks");
+	private static JButton findMatchScreen = new JButton("Find match");
+	private static CloseGame closeGame = new CloseGame();
+	private static BuildDeckScreen buildDeckScreen = new BuildDeckScreen();
+	private static FindMatchScreen fms = new FindMatchScreen();
+	
+	//organizes creating the board a bit more by tossing in the 
+	//stuff related to making buttons appear on the screen
+	public static void setUpButtons(){
+		startScreen.add(exitButton);
+		startScreen.add(deckBuildScreen);
+		startScreen.add(findMatchScreen);
+		exitButton.addActionListener(closeGame);
+		deckBuildScreen.addActionListener(buildDeckScreen);
+		findMatchScreen.addActionListener(fms);
+	}//end of setUpButtons
+	
+	public static void createMainMenu(){
+		startScreen.setLayout(new FlowLayout());
+		startScreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		startScreen.setSize(dim.width, dim.height);
+		startScreen.setVisible(true);
+		startScreen.setTitle("Board");
+		
+		setUpButtons();
+	}//end of createMainMenu
+}//end of MainMenu class
+
+
+//=================================
+//used to close the game
+class CloseGame implements ActionListener{
+	@Override
+	public void actionPerformed(ActionEvent e){
+		System.exit(0);
+	}
+}//end of CloseGame class
+
+class BuildDeckScreen implements ActionListener{
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		System.out.println("Make this open a deck building window");
+	}
+}
+
+class FindMatchScreen implements ActionListener{
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		System.out.println("Make this open the find match screen");
+	}
+}
 
 /*
 //used to let the user know something, eg, bad login credentials, etc
