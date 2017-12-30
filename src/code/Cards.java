@@ -17,6 +17,7 @@ package code;
  * summoningSickness
  */
 public abstract class Cards {
+	
 	public String cardName;
 	public int manaCost;
 	public int attack;
