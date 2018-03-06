@@ -11,7 +11,7 @@ package code;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
+public class PlayerClient {
 	public int mana = 0;
 	public List<Cards> hand = new ArrayList<Cards>();
 	public List<Cards> board = new ArrayList<Cards>();

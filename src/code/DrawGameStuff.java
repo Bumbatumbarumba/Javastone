@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 //draws whatever stuff needs to be drawn
+@SuppressWarnings("serial")
 public class DrawGameStuff extends JFrame{
 	public static void main (String [] args){
 		MainMenu.createMainMenu();
@@ -18,6 +19,7 @@ public class DrawGameStuff extends JFrame{
 }//end of DrawGameStuff
 
 //draws the game board
+@SuppressWarnings("serial")
 class MainMenu extends JFrame{
 	private static MainMenu startScreen = new MainMenu();
 	private static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
